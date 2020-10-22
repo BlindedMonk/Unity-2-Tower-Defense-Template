@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbc98d3f84ad0438e807be03b7b26247, type: 3}
   m_Name: BasicTower
   m_EditorClassIdentifier: 
-  TowerName: 
-  cost: 0
-  health: 0
-  attackCooldown: 0
-  color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  sprite: {fileID: 0}
-  attackRange: 0
+  TowerName: Basic Tower
+  cost: 100
+  health: 50
+  attackCooldown: 3
+  color: {r: 0.26606238, g: 1, b: 0, a: 1}
+  sprite: {fileID: 21300000, guid: a522a8fbc90a54308b398a7b537c4f20, type: 3}
+  attackRange: 3
+  projectile: {fileID: 11400000, guid: 0f48acd873550f14fa58c2763ef91f76, type: 2}

@@ -2,8 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileType : MonoBehaviour
+[CreateAssetMenu(fileName = "Projectile", menuName = "CustomObjects/Projectile")]
+public class ProjectileType : ScriptableObject
 {
+    public int damage;
+    public float speed;
+    public float size;
+    public Color color = Color.black;
+    public Sprite sprite;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
