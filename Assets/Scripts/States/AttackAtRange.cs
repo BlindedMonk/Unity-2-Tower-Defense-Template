@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : StateMachineBehavior 
+public class AttackAtRange : StateMachineBehaviour 
 {
     TowerManager tm;
 
@@ -10,12 +10,12 @@ public class NewBehaviourScript : StateMachineBehavior
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         tm = animator.GetComponent<TowerManager>();
-        animator.speed = tm.self.attackRate;
+        animator.speed = tm.self.attackRange;
 
     }
 
     //OnStateUpdate is called on each update frame between OnStateEnter and OnStateExit callbacks;
-    override public void OnstateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if(tm.currentTarget != null)
         {
@@ -25,6 +25,11 @@ public class NewBehaviourScript : StateMachineBehavior
         {
             animator.SetBool("hasTarget", false);
         }
+    }
+
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        animator.speed = 1;
     }
     // Start is called before the first frame update
     void Start()
